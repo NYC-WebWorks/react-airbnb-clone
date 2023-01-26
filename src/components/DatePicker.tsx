@@ -1,3 +1,5 @@
+"use client";
+
 import { useMediaQuery } from "@react-hook/media-query";
 import { useState, useEffect, useRef } from "react";
 import { DateRange, DateRangePicker } from "react-date-range";

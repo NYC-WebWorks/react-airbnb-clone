@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import styled from "styled-components";
 import { Home, Search, Heart, User } from "react-feather";

@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "react-feather";
 import styled from "styled-components";
