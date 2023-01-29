@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import Explore from "@/components/Explore";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Hosting from "@/components/Hosting";
@@ -19,6 +20,7 @@ export default function Home() {
         <LargeCards {...discover} />
         <Hosting />
       </main>
+      <Footer />
     </>
   );
 }
