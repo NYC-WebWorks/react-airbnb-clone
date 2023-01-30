@@ -55,15 +55,15 @@ const Header = ({ placeholder = "Where are you going?" }) => {
       return;
     }
 
-    router.push({
-      pathname: "/search",
-      query: {
-        location: location,
-        checkIn: checkInDate.toISOString(),
-        checkOut: checkOutDate.toISOString(),
-        guests: numberOfAdults + numberOfChildren,
-      },
-    });
+    // router.push({
+    //   pathname: "/search",
+    //   query: {
+    //     location: location,
+    //     checkIn: checkInDate.toISOString(),
+    //     checkOut: checkOutDate.toISOString(),
+    //     guests: numberOfAdults + numberOfChildren,
+    //   },
+    // });
     setTimeout(() => closeDatePicker(), 100);
   };
 
@@ -95,9 +95,9 @@ const Header = ({ placeholder = "Where are you going?" }) => {
     <HeaderSection
       ref={headerRef}
       className={[
-        scrolled || inputFocus || router.pathname !== "/" ? "scrolled" : null,
+        scrolled || inputFocus ? "scrolled" : null,
         inputFocus ? "inputFocus" : null,
-      ]}
+      ].join(" ")}
     >
       <div className="headerInner">
         <div className="logo" onClick={() => router.push("/")}>
