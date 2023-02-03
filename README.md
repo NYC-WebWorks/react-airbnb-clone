@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Airbnb Clone
 
-## Getting Started
+This project is a responsive clone of the Airbnb landing page, built using Next.js with the latest App Router framework and styled with Styled Components. It adapts seamlessly to both desktop and mobile devices.
 
-First, run the development server:
+## ScreenShot
+
+![Screenshot of Airbnb clone](./screenshot.png)
+
+## Features
+
+- **Next.js App Router**: Utilizing Next.js' latest App Router framework for efficient routing and optimized performance.
+- **Styled Components**: All components are styled using Styled Components, allowing for scoped and dynamic styling.
+- **Responsive Design**: The UI is fully responsive and adapts to different screen sizes for both desktop and mobile views.
+- **Modern Technologies**: Implemented with best practices in web development, ensuring clean and maintainable code.
+
+## Installation
+
+To get started, clone the repository and install the necessary dependencies:
+
+```bash
+git clone https://github.com/yourusername/airbnb-clone.git
+cd airbnb-clone
+npm install
+```
+
+## Running the Project
+
+To run the project locally, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js**: A React framework for building server-side rendered and static websites.
+- **Styled Components**: A library for styling React components using tagged template literals.
+- **Responsive Design**: The app is designed to work on various screen sizes, from mobile to desktop.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the GNU General Public License v3.0. You can read more about the terms and conditions of the license in the [LICENSE](LICENSE) file.
