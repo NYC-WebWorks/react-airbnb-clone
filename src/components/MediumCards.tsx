@@ -3,7 +3,21 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-const MediumCards = ({ title, items, urlPrefix }) => {
+type MediumCardsProps = {
+  title: string;
+  items: {
+    title: string;
+    img: string;
+    p?: string;
+  }[];
+  urlPrefix: string;
+};
+
+const MediumCards: React.FC<MediumCardsProps> = ({
+  title,
+  items,
+  urlPrefix,
+}) => {
   return (
     <CardsSection length={items.length}>
       <h2>{title}</h2>
@@ -32,7 +46,11 @@ const MediumCards = ({ title, items, urlPrefix }) => {
 
 export default MediumCards;
 
-const CardsSection = styled.section`
+interface CardsSectionProps {
+  length: number;
+}
+
+const CardsSection = styled.section<CardsSectionProps>`
   .cards {
     display: grid;
     grid-template-columns: repeat(${(props) => props.length}, 1fr);

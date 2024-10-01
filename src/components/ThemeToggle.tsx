@@ -3,7 +3,13 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "react-feather";
 import styled from "styled-components";
 
-const ThemeToggle = ({ text, icon, className }) => {
+type ThemeToggleProps = {
+  text?: boolean;
+  icon?: boolean;
+  className?: string;
+};
+
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ text, icon, className }) => {
   const [isDark, setIsDark] = useState(false);
   useEffect(() => {
     setIsDark(document.body.classList.contains("dark"));

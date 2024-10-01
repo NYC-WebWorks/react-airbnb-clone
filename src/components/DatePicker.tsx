@@ -1,14 +1,25 @@
 "use client";
 
 import { useMediaQuery } from "@react-hook/media-query";
-import { useState, useEffect } from "react";
-import { DateRange, DateRangePicker } from "react-date-range";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { DateRange, DateRangePicker, RangeKeyDict } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import styled from "styled-components";
 import NumberInput from "./NumberInput";
 
-const DatePicker = ({
+type DatePickerProps = {
+  close: () => void;
+  checkInDate: { value: Date; setValue: Dispatch<SetStateAction<Date>> };
+  checkOutDate: { value: Date; setValue: Dispatch<SetStateAction<Date>> };
+  numberOfAdults: { value: number; setValue: Dispatch<SetStateAction<number>> };
+  numberOfChildren: {
+    value: number;
+    setValue: Dispatch<SetStateAction<number>>;
+  };
+};
+
+const DatePicker: React.FC<DatePickerProps> = ({
   close,
   checkInDate,
   checkOutDate,
@@ -30,9 +41,9 @@ const DatePicker = ({
     return () => setVisible(false);
   }, []);
 
-  const handleSelect = (ranges) => {
-    checkInDate.setValue(ranges.selection.startDate);
-    checkOutDate.setValue(ranges.selection.endDate);
+  const handleSelect = (ranges: RangeKeyDict) => {
+    checkInDate.setValue(ranges.selection.startDate as Date);
+    checkOutDate.setValue(ranges.selection.endDate as Date);
   };
 
   const options = {
@@ -43,7 +54,7 @@ const DatePicker = ({
   };
 
   return (
-    <Container className={visible ? "visible" : null}>
+    <Container className={visible ? "visible" : ""}>
       <div className="inner">
         <h4 style={{ marginBottom: "1.5rem" }}>
           Pick Check-in & Check-out dates

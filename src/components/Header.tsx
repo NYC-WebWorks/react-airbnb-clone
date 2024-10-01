@@ -13,11 +13,11 @@ const Header = ({ placeholder = "Where are you going?" }) => {
   const router = useRouter();
 
   const navRef = useRef(null);
-  const headerRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [inputFocus, setInputFocus] = useState(false);
-  const primaryLocationRef = useRef(null);
-  const secondaryLocationRef = useRef(null);
+  const primaryLocationRef = useRef<HTMLInputElement>(null);
+  const secondaryLocationRef = useRef<HTMLInputElement>(null);
 
   const isSmallScreen = useMediaQuery("(max-width: 576px)");
 
@@ -48,10 +48,10 @@ const Header = ({ placeholder = "Where are you going?" }) => {
     document.body.style.overflow = "intial";
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!location) {
-      primaryLocationRef.current.focus();
+      primaryLocationRef.current?.focus();
       return;
     }
 
@@ -68,8 +68,8 @@ const Header = ({ placeholder = "Where are you going?" }) => {
   };
 
   useEffect(() => {
-    const handleClick = (e) => {
-      if (!headerRef.current?.contains(e.target)) {
+    const handleClick = (e: MouseEvent) => {
+      if (!headerRef.current?.contains(e.target as HTMLElement)) {
         closeDatePicker();
       }
     };
@@ -147,12 +147,12 @@ const Header = ({ placeholder = "Where are you going?" }) => {
 
               <div className="field">
                 <label>Check-in</label>
-                <input disabled placeholder="Add dates" value={checkInDate} />
+                <input disabled placeholder="Add dates" value={checkInDate.toString()} />
               </div>
 
               <div className="field">
                 <label>Check-out</label>
-                <input disabled placeholder="Add dates" value={checkOutDate} />
+                <input disabled placeholder="Add dates" value={checkOutDate.toString()} />
               </div>
 
               <div className="field">
@@ -188,7 +188,7 @@ const Header = ({ placeholder = "Where are you going?" }) => {
 
         {inputFocus && (
           <DatePicker
-            className="datepicker"
+            // className="datepicker"
             close={closeDatePicker}
             checkInDate={{ value: checkInDate, setValue: setCheckInDate }}
             checkOutDate={{ value: checkOutDate, setValue: setCheckOutDate }}

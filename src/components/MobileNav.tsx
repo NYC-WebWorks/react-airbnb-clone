@@ -3,27 +3,27 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Home, Search, Heart, User } from "react-feather";
 import ThemeToggle from "./ThemeToggle";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const MobileNav = () => {
   const router = useRouter();
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <MobileNavDiv className={isOpen ? "open" : null}>
+    <MobileNavDiv className={isOpen ? "open" : ""}>
       <div className="toggle" onClick={() => setIsOpen(!isOpen)}>
         <span></span>
       </div>
       <div className="items">
         <div
           onClick={() => router.push("/")}
-          className={`item ${router.pathname === "/" ? "active" : null}`}
+          className={`item ${pathname === "/" ? "active" : null}`}
         >
           <Home /> Home
         </div>
-        <div
-          className={`item ${router.pathname === "/explore" ? "active" : null}`}
-        >
+        <div className={`item ${pathname === "/explore" ? "active" : null}`}>
           <Search /> Explore
         </div>
         <div className="item">

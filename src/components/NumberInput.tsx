@@ -1,7 +1,15 @@
 "use client";
+
+import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 
-const NumberInput = ({ name, value, setValue }) => {
+type NumberInputProps = {
+  name: string;
+  value: number;
+  setValue: Dispatch<SetStateAction<number>>;
+};
+
+const NumberInput: React.FC<NumberInputProps> = ({ name, value, setValue }) => {
   return (
     <InputDiv>
       <label htmlFor={name}>{name}</label>
@@ -19,7 +27,7 @@ const NumberInput = ({ name, value, setValue }) => {
           max={20}
           value={value}
           id={name}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setValue(parseInt(e.target.value))}
           placeholder="Add dates"
         />
         <button
