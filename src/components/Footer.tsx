@@ -78,7 +78,7 @@ const Footer = () => {
             </span>
           </p>
           <p>
-            &copy; 2023{" "}
+            &copy; 2024{" "}
             <a href="https://shubhporwal.me" target="_blank" rel="noreferrer">
               Camilo
             </a>
